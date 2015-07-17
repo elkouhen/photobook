@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="photobook" id="ng-app">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8">
+
+	<!-- build:css ./css/photobook.css -->
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="components/dropzone/downloads/css/dropzone.css" rel="stylesheet" />
+	<link href="components/bootswatch/amelia/bootstrap.css" rel="stylesheet" />
+	<!-- endbuild -->
+</head>
+
+<body ng-controller="NavController">
+	<div class="container-fluid">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Album de Rayane & Ali</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#/photos">Accueil</a>
+					</li>
+					<li ng-show="isAdmin">
+						<a href="#/telechargement">Téléchargement</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#" ng-click="disconnect()" class="pull-right">Déconnexion</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row-fluid">
+			<div ng-view></div>
+		</div>
+	</div>
+	<!-- build:js js/photobook.js -->
+	<script src="components/jquery/jquery.js"></script>
+	<script src="components/underscore/underscore.js"></script>
+	<script src="components/angular/angular.js"></script>
+	<script src="components/angular-route/angular-route.js"></script>
+	<script src="components/angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="components/ngInfiniteScroll/ng-infinite-scroll.js"></script>
+	<script src="components/dropzone/downloads/dropzone.js"></script>
+	<script src="components/jquery.slimscroll/jquery.slimscroll.js"></script>
+	<script src="js/photobook.js"></script>
+	<!-- endbuild -->
+</body>
+
+</html>

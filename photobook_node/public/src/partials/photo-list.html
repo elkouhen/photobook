@@ -1,0 +1,27 @@
+<section>
+	<div infinite-scroll="loadMore()">
+		<div ng-repeat="photo in photos" class="panel panel-default col-lg-4 col-md-6 ">
+			<div class="panel-body">
+				<div style="float : left; width : 66%">
+					<img class="thumbnail" ng-src="images/id/{{photo.img}}" my-scrollbar-src>
+					<div class="input-group input-group-sm" style="margin-bottom : 20px;">
+						<input class="form-control" style="color: grey;" type="text" name="{{photo.img}}" placeholder="Commenter & Cliquer" ng-model="photo.new_comment" required/>
+						<span class="input-group-addon" style="background-color: grey;">
+							<span class="glyphicon glyphicon-remove" style="color: yellow;" ng-show="isAdmin" data-img="{{photo.img}}" ng-click="deletePhoto(photo)"></span>
+							<span class="glyphicon glyphicon-thumbs-up" style="color: yellow;" data-img="{{photo.img}}" vote></span>
+						</span>
+					</div>
+				</div>
+
+				<div style="overflow: scroll; " my-scrollbar>
+					<table class="table table-striped">
+						<tr ng-repeat="comment in photo.comment | reverse">
+							<td>{{comment.text}}</td>
+						</tr>
+					</table>
+					<!--div class="list-group-item" style="width: 100%;" ng-repeat="comment in photo.comment | reverse">{{comment.text}}</div-->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
